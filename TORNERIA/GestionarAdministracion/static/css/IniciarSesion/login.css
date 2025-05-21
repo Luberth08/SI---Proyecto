@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #89ebe6 100%); 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #3498db; 
+    justify-content: center;   
+}
+
+#tryagain {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: red;    
+}
+
+.formulario {
+    background-color: white;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.formulario h2{
+    color: #6c8385;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Campos de formulario */
+.ci, .contrasena {
+    margin: 25px 0;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background: #b7d2d4;
+    transition: all 0.3s ease;
+}
+
+.ci input, .contrasena input {
+    width: 90%;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #4f696b;
+    font-family:'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.ci label, .contrasena label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #4f696b;
+    font-size: 15px;
+    transition: all 0.3s;
+    pointer-events: none;
+    background: none;
+    padding: 0 5px;
+}
+
+.ci input:focus, .contrasena input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+/* Símbolo para campo de usuario */
+.ci::before {
+    content: "🔒"; /* Ícono de usuario */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Símbolo para campo de contraseña */
+.contrasena::before {
+    content: "🔑"; /* Ícono de llave */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+/* Ajuste de padding para el texto */
+.ci input,
+.contrasena input {
+    padding-left: 40px;
+    position: relative; /* Asegura que el input esté sobre el ícono */
+    z-index: 1;
+    background-color: transparent !important; /* Fondo transparente para ver el ícono */
+}
+
+/* Labels sobre el ícono */
+.ci label, 
+.contrasena label {
+    left: 40px !important; /* Ajuste para no solaparse */
+    transition: all 0.3s;
+}
+
+.ci input:focus ~ label,
+.contrasena input:focus ~ label,
+.ci input:valid ~ label,
+.contrasena input:valid ~ label {
+    top: -40px !important;
+    left: 30px !important; /* Posición ajustada */
+    z-index: 3;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #4f696b;
+    background: none;
+}
+
+/* Botón formal */
+#btn_iniciar {
+    width: 100%;
+    padding: 12px;
+    background: #3498db; /* Azul profesional */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 25px 0 15px 0;
+    transition: background 0.3s;
+}
+
+#btn_iniciar:hover {
+    background: #2980b9;
+}
+
+/* Enlaces */
+.recordar {
+    text-align: right;
+    margin: 10px 0;
+}
+
+.recordar a {
+    color: #7f8c8d;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.recordar a:hover{
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Ícono opcional para contraseña */
+.contrasena .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bdc3c7;
+    cursor: pointer;
+}
+
+.contrasena .toggle-password:hover {
+    color: #7f8c8d;
+}

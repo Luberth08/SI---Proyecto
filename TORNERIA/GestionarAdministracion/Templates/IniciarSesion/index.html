@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link type='text/css' rel="stylesheet" href='{% static "css/IniciarSesion/index.css"%}'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tornería | Perfil</title>
+  </head>
+  <body>
+
+    <h1>Bienvenido al Perfil</h1>
+    <h2>Elige tu tipo de cuenta</h2>
+
+    <div>
+          <h1>¿Quién eres?</h1>
+          <form action="/login/" method="POST"> {% csrf_token %}  
+              <button type="submit" name="rol" value="cliente">Soy Cliente</button>
+              <button type="submit" name="rol" value="empleado">Soy Empleado</button>
+              <button type="submit" name="rol" value="admin">Soy Administrador</button>
+          </form>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENU PRINCIPAL | Admin</title>
+  <link type='text/css' rel="stylesheet" href='{% static "css/MenuPrincipal/main_menu.css"%}'>
+</head>
+<body>
+  <!-- CABECERA -->
+  <header>
+    {% include "MenuPrincipal/header.html" %}
+  </header>
+
+  <!-- CONTENIDO GENERAL -->
+  <div class="main-container">
+
+    <!-- MENÚ LATERAL -->
+    <aside>
+      {% include "MenuPrincipal/barra_lateral.html" %}
+    </aside>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="main-content">
+      {% include "MenuPrincipal/contenido_default.html" %}  
+    </main>
+  </div>
+
+  <script src="{% static 'js/MenuPrincipal/main_menu.js'%}"></script>
+</body>
+</html>

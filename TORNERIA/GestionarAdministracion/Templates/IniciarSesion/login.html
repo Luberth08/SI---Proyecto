@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link type='text/css' rel="stylesheet" href='{% static "css/IniciarSesion/login.css" %}'>
+    </head>
+    <body>
+
+        <h1>Inicio de Sesion</h1>
+        <br/>
+        <div class="formulario">
+            {% block content %}
+
+            {% endblock %}       
+
+            <div>
+                <div class="ci">
+                    {{form.CI}}
+                    <label>CI</label>
+                </div>
+                
+                <div class="contrasena">
+                    {{form.contrasena}}
+                    <label>Contraseña</label>
+                </div>
+
+                <p id="tryagain"></p>
+
+                <div class="recordar">
+                    <a href="#">¿Olvidó su contraseña?</a>
+                </div>
+
+                <button id="btn_iniciar">Iniciar</button>
+            </div>
+        </div>
+
+        <!-- jQuery primero -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Define las variables que usará login.js -->
+        <script>
+            const INICIAR_SESION_URL = "/iniciar_sesion/";
+            const CSRF_TOKEN = "{{ csrf_token }}";
+        </script>
+
+        <!-- Ahora carga tu script -->
+        <script src="{% static 'js/IniciarSesion/login.js' %}"></script>
+    </body>
+</html>
