@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Sesión expira al cerrar el navegador
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-SESSION_COOKIE_AGE = 60
+SESSION_COOKIE_AGE = 3600
 
 
 # Application definition

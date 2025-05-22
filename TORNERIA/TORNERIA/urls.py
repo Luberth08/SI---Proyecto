@@ -28,4 +28,6 @@ urlpatterns = [
     path('iniciar_sesion/', P1.iniciar_sesion),
 
     path('logout/', P1.logout_user),
+
+    path('registrar_clientes/', P1.registrar_cliente),
 ]

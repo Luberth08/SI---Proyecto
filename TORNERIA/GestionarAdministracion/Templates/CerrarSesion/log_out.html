@@ -1,0 +1,16 @@
+{% load static %}
+
+<link type='text/css' rel="stylesheet" href='{% static "css/CerrarSesion/log_out.css" %}'>
+
+<!-- Modal flotante -->
+<div class="Modal">
+    <div class="modal-content">
+        <h1>¿Estás seguro que quieres cerrar sesión?</h1>
+        <form action="/logout_verif/" method="POST"> {% csrf_token %}  
+            <button type="submit" name="resp" value="si"></button>
+            <button type="submit" name="resp" value="cancelar"></button>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'js/CerrarSesion/log_out.js'%}"></script>
